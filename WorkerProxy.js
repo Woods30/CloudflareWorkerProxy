@@ -2,7 +2,7 @@ addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
 
-const myURL = new URL("https://webproxy.stratosphericus.workers.dev/")
+const myURL = new URL(`https://${process.env.PROXY_DOMAIN}/`)
 
 async function handleRequest(request) {
   const url = new URL(request.url)
